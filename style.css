@@ -1,13 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #0a9393;
   color: #c7c9c0;
   font-family: "Raleway", Helvetica, sans-serif;
 }
 
+body {
+  background-color: #0a9393;
+}
+
 h2 {
   padding: 5px;
+  font-size: 1.5rem;
 }
 
 span {
@@ -30,6 +34,10 @@ ul {
   margin-bottom: 0.4rem;
 }
 
+li {
+  font-size: 1rem;
+}
+
 .wrapper {
   border: 1px solid red;
   padding: 1rem;
@@ -45,6 +53,7 @@ ul {
 }
 
 .todo {
+  background-color: #217a7a;
   border: 1px solid green;
   margin: 5px;
   padding: 7px;
@@ -72,9 +81,76 @@ ul {
   font-size: 3.5rem;
   text-align: center;
   line-height: 3rem;
+  cursor: pointer;
 }
 
 .add-item p:hover {
-  cursor: pointer;
   font-size: 6rem;
+}
+
+.popup {
+  border: 1px #c7c9c0 solid;
+  border-radius: 10px;
+  background-color: rgba(33, 122, 122, 0.7);
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 60%;
+  z-index: 10;
+  text-align: center;
+}
+
+.popup input,
+.popup textarea,
+.popup button {
+  width: 90%;
+  border: 1px solid #c7c9c0;
+  border-radius: 10px;
+  background-color: inherit;
+  padding: 0.25 0.75rem;
+}
+
+.popup input::placeholder,
+.popup textarea::placeholder {
+  color: rgba(199, 201, 192, 0.9);
+}
+
+.popup input[type="text"] {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.popup textarea {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 0.9rem;
+  font-size: 1rem;
+}
+
+.popup h4 {
+  position: absolute;
+  right: 0.8rem;
+  font-size: 1rem;
+  text-align: right;
+  padding: 0.5rem;
+  max-height: 1.5rem;
+  cursor: pointer;
+}
+
+.popup h4:hover {
+  font-size: 1.25rem;
+}
+
+.popup button {
+  cursor: pointer;
+  width: 40%;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.popup button:focus {
+  outline: 0;
 }
