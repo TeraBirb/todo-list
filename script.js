@@ -6,6 +6,10 @@ const popupTextarea = document.querySelector(".popup textarea");
 const popupAdd = document.querySelector(".popup button");
 const todoContainer = document.querySelector(".todo-container");
 
+function deleteNote(e) {
+  e.target.parentNode.parentNode.style.display = "none";
+}
+
 popupBtn.addEventListener("click", () => {
   popupDiv.classList = "popup";
 });
@@ -14,16 +18,34 @@ popupClose.addEventListener("click", () => {
   popupDiv.classList = "popup hidden";
 });
 
-popupAdd.addEventListener("click", () => {
+popupAdd.addEventListener("click", e => {
   let todo = document.createElement("div");
-  todo.classList = "todo";
   let todoHeader = document.createElement("div");
+  let h2 = document.createElement("h2");
+  let span = document.createElement("span");
+  let p = document.createElement("p");
+
+  todo.classList = "todo";
   todoHeader.classList = "todo-header";
-  let todoTitle = document.createElement("h2");
-  todoTitle.innerHTML = popupTitle.value;
-  let xSpan = document.createElement("span");
-  xSpan.innerHTML = "x";
+  h2.classList = "todo-title";
+  p.classList = "todo-body";
+
+  h2.innerHTML = popupTitle.value;
+  span.textContent = "x";
+  span.addEventListener("click", deleteNote);
+
+  todoHeader.appendChild(h2);
+  todoHeader.appendChild(span);
+  p.append(popupTextarea.value);
+
+  todo.appendChild(todoHeader);
+  todo.appendChild(p);
 
   todoContainer.appendChild(todo);
-  todo.appendChild(todoHeader, xSpan);
+
+  console.log(todo);
+
+  e.target.parentNode.classList = "popup hidden";
+  popupTitle.value = "";
+  popupTextarea.value = "";
 });
