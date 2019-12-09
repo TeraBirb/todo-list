@@ -29,20 +29,20 @@ span:hover {
 }
 
 .todo-body {
-  margin-left: 1rem;
-  margin-bottom: 0.4rem;
+  margin: 0 1rem 0.4rem 1rem;
   font-size: 1rem;
+  word-break: break-all;
 }
 
 .wrapper {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   padding: 1rem;
   margin: 0 auto;
   width: 90%;
 }
 
 .todo-container {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -50,9 +50,10 @@ span:hover {
 
 .todo {
   background-color: #217a7a;
-  border: 1px solid green;
-  margin: 5px;
+  /*border: 1px solid green;*/
+  margin: 5px auto;
   padding: 7px;
+  width: 100%;
 }
 
 .todo-header {
@@ -160,7 +161,18 @@ span:hover {
   position: absolute;
   left: 0;
   right: 0;
-  top: 1rem;
-  animation: 5000ms;
+  top: 2rem;
+  font-size: 2rem;
   font-weight: 700;
+  animation: fadeinout 2s;
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
