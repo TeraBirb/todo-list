@@ -63,7 +63,7 @@ span:hover {
 }
 
 .add-item {
-  position: absolute;
+  position: fixed;
   right: 2rem;
   bottom: 2rem;
   background-color: transparent;
@@ -175,4 +175,35 @@ span:hover {
   50% {
     opacity: 1;
   }
+}
+
+.theme-btn {
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: fixed;
+  left: 2.5rem;
+  bottom: 1.5rem;
+}
+
+.theme-btn p {
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.themes {
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  z-index: 10;
+}
+
+.themes p {
+  padding-top: 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.themes p:hover {
+  text-decoration: underline;
 }

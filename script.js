@@ -6,6 +6,8 @@ const popupTextarea = document.querySelector(".popup textarea");
 const popupAdd = document.querySelector(".popup button");
 const todoContainer = document.querySelector(".todo-container");
 const alert = document.querySelector(".alert");
+const themeBtn = document.querySelector(".theme-btn");
+const themes = document.querySelector(".themes");
 
 function deleteNote(e) {
   e.target.parentNode.parentNode.style.display = "none";
@@ -61,4 +63,14 @@ popupAdd.addEventListener("click", e => {
       alert.classList = "alert hidden";
     }, 1900);
   }
+});
+
+themeBtn.addEventListener("mouseover", () => {
+  themes.classList = "themes";
+  themeBtn.classList = "theme-btn hidden";
+});
+
+themes.addEventListener("mouseleave", e => {
+  themes.classList = "themes hidden";
+  themeBtn.classList = "theme-btn";
 });
