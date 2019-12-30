@@ -10,11 +10,55 @@ const themeBtn = document.querySelector(".theme-btn");
 const themes = document.querySelector(".themes");
 const underwater = document.querySelector(".underwater");
 const yellow = document.querySelector(".yellow");
-const gulf = document.querySelector(".gulf")
-const body = document.querySelector("body");
+const gulf = document.querySelector(".gulf");
+let currentTheme = "underwater";
 
 function deleteNote(e) {
   e.target.parentNode.parentNode.style.display = "none";
+}
+
+function themeCheck() {
+  const bodyBg = document.querySelector("body");
+  const bodyFontColor = document.querySelector("body");
+  const todoBg = document.querySelectorAll(".todo");
+  const addItemBorder = document.querySelector(".add-item");
+  const popupBg = document.querySelector(".popup");
+
+  if (currentTheme === "underwater") {
+    bodyBg.style.background = "#0a9393";
+    bodyFontColor.style.color = "#fcfcfc";
+    if (todoBg !== null) {
+      todoBg.forEach(item => {
+        item.style.backgroundColor = "#217a7a";
+      });
+    }
+    popupBg.style.background = "rgba(33, 122, 122, 0.7)";
+    addItemBorder.style.borderColor = "#fcfcfc";
+  }
+
+  if (currentTheme === "yellow") {
+    bodyBg.style.background = "#2b2b2b";
+    bodyFontColor.style.color = "#ffe922";
+    if (todoBg !== null) {
+      todoBg.forEach(item => {
+        item.style.backgroundColor = "#0e0e0e";
+      });
+    }
+    popupBg.style.background = "rgba(28, 28, 28, 0.7)";
+    addItemBorder.style.borderColor = "#ffe922";
+  }
+
+  if (currentTheme === "gulf") {
+    bodyBg.style.background = "#60c6eb";
+    bodyFontColor.style.color = "#121212";
+    if (todoBg !== null) {
+      todoBg.forEach(item => {
+        item.style.backgroundColor = "#f38f20";
+      });
+    }
+    popupBg.style.background = "rgba(204, 120, 27, 0.9)";
+    addItemBorder.style.borderColor = "#121212";
+  }
 }
 
 popupBtn.addEventListener("click", () => {
@@ -62,6 +106,8 @@ popupAdd.addEventListener("click", e => {
     popupTitle.placeholder = "Title";
     popupTextarea.placeholder = "Add a note";
 
+    themeCheck();
+
     alert.classList = "alert";
     setTimeout(function() {
       alert.classList = "alert hidden";
@@ -79,6 +125,17 @@ themes.addEventListener("mouseleave", e => {
   themeBtn.classList = "theme-btn";
 });
 
+underwater.addEventListener("click", () => {
+  currentTheme = "underwater";
+  themeCheck();
+});
+
 yellow.addEventListener("click", () => {
-  all.
-})
+  currentTheme = "yellow";
+  themeCheck();
+});
+
+gulf.addEventListener("click", () => {
+  currentTheme = "gulf";
+  themeCheck();
+});
