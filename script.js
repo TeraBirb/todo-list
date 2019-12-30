@@ -8,6 +8,10 @@ const todoContainer = document.querySelector(".todo-container");
 const alert = document.querySelector(".alert");
 const themeBtn = document.querySelector(".theme-btn");
 const themes = document.querySelector(".themes");
+const underwater = document.querySelector(".underwater");
+const yellow = document.querySelector(".yellow");
+const gulf = document.querySelector(".gulf")
+const body = document.querySelector("body");
 
 function deleteNote(e) {
   e.target.parentNode.parentNode.style.display = "none";
@@ -74,3 +78,7 @@ themes.addEventListener("mouseleave", e => {
   themes.classList = "themes hidden";
   themeBtn.classList = "theme-btn";
 });
+
+yellow.addEventListener("click", () => {
+  all.
+})
